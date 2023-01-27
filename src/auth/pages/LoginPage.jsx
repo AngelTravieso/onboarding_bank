@@ -1,10 +1,12 @@
-import { NavigateNext } from '@mui/icons-material';
 import { Box, Button, Grid, Link, Typography } from '@mui/material';
+import { NavigateNext } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
+
 import { DocumentField, UserTypeSelect } from '../components';
 import { AuthLayout } from '../layout/AuthLayout';
 
 export const LoginPage = () => {
+
   return (
     <AuthLayout title='Registro de Cuenta Personal'>
       <Box component='form' noValidate autoComplete='off' className='animate__animated animate__fadeIn animate__faster'>
@@ -27,7 +29,8 @@ export const LoginPage = () => {
             display='flex'
             justifyContent='center'
           >
-            <Button variant='contained' endIcon={<NavigateNext />}>
+            {/* Boton para ingresar al paso a paso del Onboarding */}
+            <Button component={RouterLink} variant='contained' endIcon={<NavigateNext />} to='/onboarding/main'>
               Siguiente
             </Button>
           </Grid>
