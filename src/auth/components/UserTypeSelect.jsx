@@ -1,28 +1,20 @@
 import { MenuItem, TextField } from '@mui/material';
 
-const currencies = [
-  {
-    value: '1',
-    label: 'Venezolano',
-  },
-  {
-    value: '2',
-    label: 'Extranjero',
-  },
-];
 
-export const UserTypeSelect = () => {
+export const UserTypeSelect = ({ handleChange, itemList, initialValue }) => {
   return (
     <TextField
+      name='userType'
       select
-      defaultValue='1'
+      defaultValue={initialValue}
       label='Tipo de Documento'
       variant='standard'
+      onChange={ handleChange }
       fullWidth
     >
-      {currencies.map((option) => (
-        <MenuItem key={option.value} value={option.value}>
-          {option.label}
+      {itemList.map(({ value, label }) => (
+        <MenuItem key={value} value={value}>
+          {label}
         </MenuItem>
       ))}
     </TextField>

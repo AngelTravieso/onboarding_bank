@@ -1,12 +1,15 @@
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 
-export const DocumentField = () => {
+export const DocumentField = ({ document, handleChange }) => {
   return (
     <TextField
-      variant='standard'
-      label='Documento de Identidad'
-      margin='none'
+      name="document"
+      variant="standard"
+      label="Documento de Identidad"
+      margin="none"
       autoFocus={true}
+      value={document}
+      onChange={handleChange}
       required
       fullWidth
     />
