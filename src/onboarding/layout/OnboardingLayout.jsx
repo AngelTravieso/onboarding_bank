@@ -15,18 +15,18 @@ export const OnboardingLayout = ({ children }) => {
           alignItems='center'
           justifyContent='start'
           sx={{
-            minHeight: '100vh',
-            backgroundColor: 'secondary.main',
+            minHeight: '85vh',
+            backgroundColor: '#eef5f9',
             padding: 4,
-            marginTop: 6,
+            // Solucionar (si no hay margin no se ve la sombra del appbar)
+            marginTop: 1,
           }}
         >
           {children}
-
-          <Footer />
         </Grid>
       </Box>
 
+      <Footer />
     </Box>
-  )
-}
+  );
+};
