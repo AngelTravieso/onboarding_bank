@@ -7,6 +7,8 @@ import { DocumentField, UserTypeSelect } from "../components";
 import { AuthLayout } from "../layout/AuthLayout";
 import { currencies } from "../../data/Constants";
 import { userForm } from "../../hooks";
+import { useDispatch } from "react-redux";
+import { preLogin } from "../../store/auth";
 
 const formData = {
   userType: "1",
@@ -14,6 +16,10 @@ const formData = {
 };
 
 export const LoginPage = () => {
+
+  const dispatch = useDispatch();
+
+
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const { formState, userType, document, onInputChange, onResetForm } =
@@ -28,6 +34,9 @@ export const LoginPage = () => {
     onResetForm();
 
     console.log(formState);
+
+    dispatch(preLogin());
+
   };
 
   return (
